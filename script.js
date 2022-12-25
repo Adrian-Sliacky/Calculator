@@ -1,5 +1,7 @@
 const res = document.getElementById("result")
+
 const memDisButtons = document.querySelectorAll(".memory_op_disabled")
+
 const changeAllMemButtons = (disabled) => {
     for (let i = 0; i < memDisButtons.length; i++) {
         if (disabled) {
@@ -74,51 +76,57 @@ const addCalc = (enteredValue) => {
     }
 }
 
-document.addEventListener("keydown", liveKeyboardInputHandler)
+// uncomment code below to disable right-click, that being said, don't do it! It will only annoy the user.
+// document.addEventListener('contextmenu', event => event.preventDefault())
 
-function liveKeyboardInputHandler(e) {
-    e.preventDefault()
-    if (e.key === "0") {
+
+const liveKeyboardInputHandler = (k) => {
+    // uncomment this if you want to catch all keyboard inputs, and sink them. But, it will also catch things like Ctrl/Cmd + R or the inspect window
+    // k.preventDefault()
+
+    if (k.key === "0") {
         addCalc(0)
-    } else if (e.key === "1") {
+    } else if (k.key === "1") {
         addCalc(1)
-    } else if (e.key === "2") {
+    } else if (k.key === "2") {
         addCalc(2)
-    } else if (e.key === "3") {
+    } else if (k.key === "3") {
         addCalc(3)
-    } else if (e.key === "4") {
+    } else if (k.key === "4") {
         addCalc(4)
-    } else if (e.key === "5") {
+    } else if (k.key === "5") {
         addCalc(5)
-    } else if (e.key === "6") {
+    } else if (k.key === "6") {
         addCalc(6)
-    } else if (e.key === "7") {
+    } else if (k.key === "7") {
         addCalc(7)
-    } else if (e.key === "8") {
+    } else if (k.key === "8") {
         addCalc(8)
-    } else if (e.key === "9") {
+    } else if (k.key === "9") {
         addCalc(9)
     }
-    if (e.key === "+") {
+    if (k.key === "+") {
         addCalc("+")
-    } else if (e.key === "-") {
+    } else if (k.key === "-") {
         addCalc("-")
-    } else if (e.key === "*") {
+    } else if (k.key === "*") {
         addCalc("*")
-    } else if (e.key === "/") {
+    } else if (k.key === "/") {
         addCalc("/")
     }
-    if (e.key === ".") {
+    if (k.key === ".") {
         addCalc(".")
     }
-    if (e.key === "Enter") {
-        calc(result.value)
+    if (k.key === "Enter") {
+        calc(res.value)
     }
-    if (e.key === "Backspace") {
+    if (k.key === "Backspace") {
         const resultInput = res.value
         res.value = resultInput.substring(0, res.value.length - 1)
     }
-    if (e.key === "Delete") {
-        res.value = ''
+    if (k.key === "Delete") {
+        res.value = ""
     }
 }
+
+document.addEventListener("keydown", liveKeyboardInputHandler)
