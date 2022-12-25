@@ -81,7 +81,7 @@ const addCalc = (enteredValue) => {
 
 
 const liveKeyboardInputHandler = (k) => {
-    // uncomment this if you want to catch all keyboard inputs, and sink them. But, it will also catch things like Ctrl/Cmd + R or the inspect window
+    // uncomment this if you want to catch all keyboard inputs, and sink them. But, it will also catch things like Ctrl/Cmd + R or Ctrl/Cmd + Shift/Option + I
     // k.preventDefault()
 
     if (k.key === "0") {
