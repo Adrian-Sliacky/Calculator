@@ -29,6 +29,7 @@ body {
 
 ::placeholder {
   color: black;
+  opacity: 1;
 }
 
 input {
