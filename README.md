@@ -6,4 +6,4 @@
 <a href="https://adriansliacky.github.io/Calculator/">Try it.</a>
 </h3>
 <hr>
-<a href="https://adriansliacky.github.io/Calculator/"><p align="center"><img src="https://www.adriansliacky.sk/Twy1peUZKZ.png" alt="app screenshot"/></p></a></h3>
+<a href="https://adriansliacky.github.io/Calculator/"><p align="center"><img src="https://www.adriansliacky.sk/iTVcF2c47F.png" alt="app screenshot"/></p></a></h3>
