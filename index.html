@@ -1,155 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Calculator by Adrian Sliacky</title>
-    <meta name="description" content="Calculator App" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <link rel="icon" type="image/x-icon" href="img/calculator.ico" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body onmousedown="return false" onselectstart="return false">
-    <div class="wrapper">
-      <div class="inner-box">
-        <div class="row-0 row">
-          <label for="result"></label
-          ><input
-            type="text"
-            name="result"
-            id="result"
-            placeholder="0"
-            readonly
-          />
-        </div>
-        <div class="row-1 row">
-          <div class="btn-wrapper">
-            <input
-              type="button"
-              value="MC"
-              onclick="memClear()"
-              class="accent_button memory_op_disabled"
-            />
-          </div>
-          <div class="btn-wrapper">
-            <input
-              type="button"
-              value="MR"
-              onclick="memRead()"
-              id="memory_read_button"
-              class="memory_op_disabled accent_button"
-            />
-          </div>
-          <div class="btn-wrapper">
-            <input
-              type="button"
-              value="M+"
-              onclick="memPlus()"
-              class="accent_button"
-            />
-          </div>
-          <div class="btn-wrapper">
-            <input
-              type="button"
-              value="CE"
-              onclick="result.value=''"
-              id="clear_button"
-            />
-          </div>
-        </div>
-        <div class="row-2 row">
-          <div class="btn-wrapper">
-            <input type="button" value="7" onclick="addCalc(7)" />
-          </div>
-          <div class="btn-wrapper">
-            <input type="button" value="8" onclick="addCalc(8)" />
-          </div>
-          <div class="btn-wrapper">
-            <input type="button" value="9" onclick=" addCalc(9)" />
-          </div>
-          <div class="btn-wrapper">
-            <input
-              type="button"
-              value="+"
-              onclick="addCalc('+')"
-              class="accent_button"
-            />
-          </div>
-        </div>
-        <div class="row-3 row">
-          <div class="btn-wrapper">
-            <input type="button" value="4" onclick=" addCalc(4)" />
-          </div>
-          <div class="btn-wrapper">
-            <input type="button" value="5" onclick=" addCalc(5)" />
-          </div>
-          <div class="btn-wrapper">
-            <input type="button" value="6" onclick=" addCalc(6)" />
-          </div>
-          <div class="btn-wrapper">
-            <input
-              type="button"
-              value="-"
-              onclick="addCalc('-')"
-              class="accent_button"
-            />
-          </div>
-        </div>
-        <div class="row-4 row">
-          <div class="btn-wrapper">
-            <input type="button" value="1" onclick="addCalc(1)" />
-          </div>
-          <div class="btn-wrapper">
-            <input type="button" value="2" onclick="addCalc(2)" />
-          </div>
-          <div class="btn-wrapper">
-            <input type="button" value="3" onclick="addCalc(3)" />
-          </div>
-          <div class="btn-wrapper">
-            <input
-              type="button"
-              value="×"
-              onclick="addCalc('×')"
-              class="accent_button"
-            />
-          </div>
-        </div>
-        <div class="row-5 row">
-          <div class="btn-wrapper">
-            <input type="button" value="0" onclick="addCalc(0)" />
-          </div>
-          <div class="btn-wrapper">
-            <input type="button" value="." onclick="addCalc('.')" />
-          </div>
-          <div class="btn-wrapper">
-            <input
-              type="button"
-              value="÷"
-              onclick="addCalc('÷')"
-              class="accent_button"
-            />
-          </div>
-          <div class="btn-wrapper">
-            <input
-              type="button"
-              value="="
-              onclick="calc(result.value)"
-              class="accent_button"
-            />
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Calculator by Adrian Sliacky</title>
+  <meta name="description" content="Calculator App" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="img/calculator.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet" />
+</head>
+
+<body onmousedown="return false" onselectstart="return false">
+<div class="loader-container">
+  <span class="spinner"></span>
+</div>
+<div class="wrapper">
+  <div class="inner-box">
+    <div class="row-0 row">
+      <label for="result"></label><input type="text" name="result" id="result" placeholder="0" readonly />
+    </div>
+    <div class="row-1 row">
+      <div class="btn-wrapper">
+        <input type="button" value="MC" onclick="memClear()" class="accent_button memory_op_disabled" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="MR" onclick="memRead()" id="memory_read_button" class="memory_op_disabled accent_button" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="M+" onclick="memPlus()" class="accent_button" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="CE" onclick="result.value=''" id="clear_button" />
       </div>
     </div>
-    <script async src="script.js"></script>
-  </body>
+    <div class="row-2 row">
+      <div class="btn-wrapper">
+        <input type="button" value="7" onclick="addCalc(7)" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="8" onclick="addCalc(8)" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="9" onclick=" addCalc(9)" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="+" onclick="addCalc('+')" class="accent_button" />
+      </div>
+    </div>
+    <div class="row-3 row">
+      <div class="btn-wrapper">
+        <input type="button" value="4" onclick=" addCalc(4)" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="5" onclick=" addCalc(5)" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="6" onclick=" addCalc(6)" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="-" onclick="addCalc('-')" class="accent_button" />
+      </div>
+    </div>
+    <div class="row-4 row">
+      <div class="btn-wrapper">
+        <input type="button" value="1" onclick="addCalc(1)" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="2" onclick="addCalc(2)" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="3" onclick="addCalc(3)" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="×" onclick="addCalc('×')" class="accent_button" />
+      </div>
+    </div>
+    <div class="row-5 row">
+      <div class="btn-wrapper">
+        <input type="button" value="0" onclick="addCalc(0)" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="." onclick="addCalc('.')" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="÷" onclick="addCalc('÷')" class="accent_button" />
+      </div>
+      <div class="btn-wrapper">
+        <input type="button" value="=" onclick="calc(result.value)" class="accent_button" />
+      </div>
+    </div>
+  </div>
+</div>
+<script async src="script.js"></script>
+</body>
+
 </html>
